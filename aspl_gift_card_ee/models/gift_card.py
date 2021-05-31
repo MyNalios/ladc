@@ -52,7 +52,7 @@ class ASPLGiftCard(models.Model):
     def random_card_no():
         return int(time.time())
 
-    card_no = fields.Char(string="Card No", default=random_card_no, readonly=True)
+    card_no = fields.Char(string="Card No", default=random_card_no, readonly=False)
     card_value = fields.Float(string="Card Value")
     card_type = fields.Many2one('aspl.gift.card.type', string="Card Type")
     customer_id = fields.Many2one('res.partner', string="Customer")
